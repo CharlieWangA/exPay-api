@@ -75,7 +75,18 @@
 }
 ```
 
-
+### 7 回调参数
+{
+   "paymentOrderId":"MENT22102935311674803",
+   "merchantOrderId":"3dfc325ac6714ba586d1029fc66d15a4",
+   "merchantId":"merchant001",
+   "amount":100.16,
+   "orderTime":null,
+   "userId":null,
+   "userIp":null,
+   "state":3,
+   "sign":"39492F1684741D7A05569A75E69DFA2A"
+}
 
 
 ## 二、提款下单接口
@@ -146,6 +157,19 @@
     "data":null 
 }
 ```
+
+### 7 回调参数
+{
+  "withdrawOrderId":"DRAW23421304476623774",
+  "merchantOrderId":"9e78e96322e040ea90f57893c652a6a2",
+  "merchantId":"merchant001",
+  "amount":1001.00,
+  "orderTime":1673504476,
+  "userId":"MOCK",
+  "userIp":"127.0.0.1",
+  "state":0,
+  "sign":"83FA6AC685D32299701114B740C82FC7"
+} 
 
 ## 三、充值查单接口
 

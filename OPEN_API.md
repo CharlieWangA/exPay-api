@@ -38,7 +38,7 @@
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
-| amoutn | 是   | decimal | 无      | 充值金额   |
+| amount | 是   | decimal | 无      | 充值金额   |
 | merchantOrderId | 是   | string | 1 < length < 60      | 商户订单号   |
 | sign | 是   | string | 无      | 签名   |
 
@@ -115,7 +115,7 @@
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
-| amoutn | 是   | decimal | 无      | 提款金额   |
+| amount | 是   | decimal | 无      | 提款金额   |
 | merchantOrderId | 是   | string | 1 < length < 60      | 商户订单号   |
 | withdrawBankAccountNumber | 是   | string | 1 < length < 60      | 提款银行账户号   |
 | withdrawBank | 是   | integer | 参考 post https://client.expay.one/api/bankAccount/findAllBank      | 提款银行   |

@@ -61,6 +61,8 @@
 ### 6 返回示例  
 
 ```json
+信息模式:
+
 {
     "code": 200,  // 状态码
     "message": "成功",  // 提示信息
@@ -74,20 +76,17 @@
         "bankSimpleName":"ABC"
     } 
 }
+-----------------------------------------------
+收银台模式:
+
+{
+    "code": 200,  // 状态码
+    "message": "成功",  // 提示信息
+    "data": 'https://domain.one/toPay?pat=2141f1snj94712hkj'
+}
 ```
 
-### 7 回调参数
-{
-   "paymentOrderId":"MENT22102935311674803",
-   "merchantOrderId":"3dfc325ac6714ba586d1029fc66d15a4",
-   "merchantId":"merchant001",
-   "amount":100.16,
-   "orderTime":null,
-   "userId":null,
-   "userIp":null,
-   "state":3,
-   "sign":"39492F1684741D7A05569A75E69DFA2A"
-}
+
 
 
 ## 二、提款下单接口
@@ -127,7 +126,7 @@
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
-| amount | 是   | decimal | 无      | 提款金额   |
+| amoutn | 是   | decimal | 无      | 提款金额   |
 | merchantOrderId | 是   | string | 1 < length < 60      | 商户订单号   |
 | withdrawBankAccountNumber | 是   | string | 1 < length < 60      | 提款银行账户号   |
 | withdrawBank | 是   | integer | 参考 post https://client.expay.one/api/bankAccount/findAllBank      | 提款银行   |
@@ -158,19 +157,6 @@
     "data":null 
 }
 ```
-
-### 7 回调参数
-{
-  "withdrawOrderId":"DRAW23421304476623774",
-  "merchantOrderId":"9e78e96322e040ea90f57893c652a6a2",
-  "merchantId":"merchant001",
-  "amount":1001.00,
-  "orderTime":1673504476,
-  "userId":"MOCK",
-  "userIp":"127.0.0.1",
-  "state":0,
-  "sign":"83FA6AC685D32299701114B740C82FC7"
-} 
 
 ## 三、充值查单接口
 
@@ -320,11 +306,3 @@
 | 200 | 成功 |  
 | 202 | 未知错误 |
 | 202 | 失败 |  
-
-#### 订单状态
- 状态码 | 类型   
-| ---- | ---- | 
-| 0 | 待处理 |  
-| 1 | 成功 |
-| 2 | 处理中 |  
-| 3 | 订单关闭 |  

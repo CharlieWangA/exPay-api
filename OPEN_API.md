@@ -86,7 +86,21 @@
 }
 ```
 
+### 7 回调参数
+```
+{
+        "paymentOrderId":"MENT22102935311674803",
+        "merchantOrderId":"3dfc325ac6714ba586d1029fc66d15a4",
+        "merchantId":"merchant001",
+        "amount":100.16,
+        "orderTime":null,
+        "userId":null,
+        "userIp":null,
+        "state":3,
+        "sign":"39492F1684741D7A05569A75E69DFA2A"
+    } 
 
+```
 
 
 ## 二、提款下单接口

@@ -41,6 +41,7 @@
 | amount | 是   | decimal | 无      | 充值金额   |
 | model | 否   | integer | 1信息2收银台      | 充值模式 默认为收银台模式   |
 | merchantOrderId | 是   | string | 1 < length < 60      | 商户订单号   |
+| depositName | 否   | string | 1 < length < 60      | 存款人姓名   |
 | sign | 是   | string | 无      | 签名   |
 
 

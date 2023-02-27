@@ -74,7 +74,8 @@
         "createTime":"2023-01-11 01:48:35",
         "bankAccountNumber":"8888888888888889",
         "bankName":"中国农业银行",
-        "bankSimpleName":"ABC"
+        "bankSimpleName":"ABC",
+        "openAccountName":"张三"
     } 
 }
 -----------------------------------------------
@@ -141,7 +142,7 @@
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
-| amoutn | 是   | decimal | 无      | 提款金额   |
+| amount | 是   | decimal | 无      | 提款金额   |
 | merchantOrderId | 是   | string | 1 < length < 60      | 商户订单号   |
 | withdrawBankAccountNumber | 是   | string | 1 < length < 60      | 提款银行账户号   |
 | withdrawBank | 是   | integer | 参考 post https://client.expay.one/api/bankAccount/findAllBank      | 提款银行   |

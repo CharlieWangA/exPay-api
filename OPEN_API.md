@@ -34,7 +34,7 @@
 | 参数名    | 必选 | 类型   | 限制条件        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
 | merchantId   | 是   | string | 1 < length < 60 | 商户ID |
-| orderTime  | 是   | Long | 无 | 下单时间     |
+| orderTime  | 是   | long | 无 | 下单时间     |
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
@@ -138,7 +138,7 @@
 | 参数名    | 必选 | 类型   | 限制条件        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
 | merchantId   | 是   | string | 1 < length < 60 | 商户ID |
-| orderTime  | 是   | Long | 无 | 下单时间     |
+| orderTime  | 是   | long | 无 | 下单时间     |
 | notifyUrl | 是   | string | 无      | 进行通知充值到账的接口   |
 | userId | 否   | string | 无      | 用户ID   |
 | userIp | 否   | string | 无      | 用户IP   |
@@ -292,25 +292,69 @@
     然后使用MD5进行加密, 生成最终sign
     
  ```
+ 
+ ## 五、查询余额接口
+ 
+ ### 1 接口名称  
+ 
+ 查询余额接口
+ 
+ ### 2 接口描述    
+ 
+ - 查询商户的可用余额
+ 
+ 
+ ### 3 请求地址  
+ 
+ `{apiAddress}/api/getBalance`  
+ 
+ ### 4 请求方式  
+ 
+ **POST**  
+ 
+ ### 5 请求参数  
+ 
+ #### 5.1 Header 参数  
+ 
+ | 参数名       | 必选 | 类型/参数值      | 说明         |
+ | ------------ | ---- | ---------------- | ------------ |
+ | Content-Type | 是   | application/json | 请求参数类型 |
+ 
+ #### 5.2 Body 参数  
+ 
+ | 参数名    | 必选 | 类型   | 限制条件        | 说明     |
+ | --------- | ---- | ------ | --------------- | -------- |
+ | merchantId   | 是   | string | 1 < length < 60 | 商户ID |
+ | timestamp | 是   | long | 1 < length < 60      | 时间戳   |
+ | sign | 是   | string | 无      | 签名   |
+ 
+ 
+ **sign生成方式**:  
+ **注意事项**: sign无需参与签名
+ 
+ 
+  ```
+     下单参数根据参数名英文字母顺序排序, 使用&PARAMNAME=格式进行拼接, 最后拼接apikey(直接拼接), 生成加密前字符串
+     
+     例:merchantId=608a1efc74bf48fe8362b6c766e090a9&timestamp=1677666673166c8eaa3c324a3e80d1890fcc9317ff
+     
+     然后使用MD5进行加密, 生成最终sign
+     
+  ```
 
 
 ### 6 返回示例  
 
 ```json
 {
-    "code": 200,  // 状态码
-    "message": "成功",  // 提示信息
-    "data":{
-        "withdrawOrderId":"DRAW23421304476623774",
-        "merchantOrderId":"9e78e96322e040ea90f57893c652a6a2",
-        "merchantId":"merchant001",
-        "amount":1001.00,
-        "orderTime":1673504476,
-        "userId":"MOCK",
-        "userIp":"127.0.0.1",
-        "state":0,
-        "sign":"83FA6AC685D32299701114B740C82FC7"
-    } 
+    "code": 200,
+    "message": "成功",
+    "data": {
+        "merchantId": "608a1efc74bf48fe8362b6c766e090a9",
+        "availableBalance": 2675.78,
+        "timestamp": 1677666527,
+        "sign": "0717CAC040BE159C2A1320D234A037F2"
+    }
 }
 ```
 
@@ -320,5 +364,5 @@
  状态码 | 类型   
 | ---- | ---- | 
 | 200 | 成功 |  
-| 202 | 未知错误 |
+| 201 | 未知错误 |
 | 202 | 失败 |  
